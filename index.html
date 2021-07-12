@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link href="light.css" rel="stylesheet" id="theme-link">
+<link href="assets/css/light.css" rel="stylesheet" id="theme-link">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>NLH Application</title>
@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/css/dark.css">
-    <link rel="stylesheet" href="assets/css/light.css">
+    <link rel="stylesheet" href="assets/css/toggle.css">
 </head>
 
 <body>
@@ -105,17 +104,19 @@
                 </div>
             </fieldset><button class="btn btn-primary" type="submit">Submit</button>
         </form>
-    </section><div class="one-quarter" id="switch">
-  <input type="checkbox" class="checkbox" id="chk" />
-  <label class="label" for="chk">
-      <i class="fas fa-moon"></i>
-      <i class="fas fa-sun"></i>
-      <div class="ball"></div>
-  </label>
+    </section>
+    <div id="toggler">
+<label class="switch">
+    <input class="btn-toggle" type="checkbox" checked>
+    <div>
+        <span id="span-mode">Dark / Light Mode</span>
+    </div>
+</label>
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/smart-forms.min.js"></script>
+    <script src="assets/js/form.js"></script>
 </body>
 
 </html>
