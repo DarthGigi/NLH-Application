@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<link href="assets/css/dark.css" rel="stylesheet" id="theme-link">
+    <link href="assets/css/dark.css" rel="stylesheet" id="theme-link">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>NLH Application</title>
@@ -28,9 +28,12 @@
     <section class="contact-clean">
         <form data-bss-recipient="9c457f85a96ad598167fef0962d70a93" data-bss-subject="New Submission for NLH Application!" data-bss-success-message="Your application has been send!">
             <h1 class="text-center">NLH Application</h1>
-            <!-- <p>Welcome to the NLH Staff Application. <br>Please fill everything out truthfully and take your time, there is no rush!<br><br>Questions with an * are required!</p> -->
-            <br><br><br><p style="color:#ff0000;">The applications are closed, thank you for your interest!</p><br><br><br>
-            <!-- <fieldset name="NLH Application" disabled>
+            <p>Welcome to the NLH Staff Application. <br>Please fill everything out truthfully and take your time, there is no rush! Please be mature, a few jokes here and there are fine. Keep an eye on your vocabulary, spelling, grammar and punctuation<br><br>Questions
+                with an * are required!<br><br>Please note that on all large input fields there is a minimum 150 character requirement (it won't send the form if it's below 150 characters).</p>
+            <!-- <br><br><br><p style="color:#ff0000;">The applications are closed, thank you for your interest!</p><br><br><br> -->
+            <br><br><br>
+            <p style="color:#ff0000;">This time the applications are age limited to people aged 16 or above!</p><br><br><br>
+            <fieldset name="NLH Application" enabled>
                 <div class="row">
                     <div class="col-lg-12 offset-lg-0 column margin-bottom"><input class="form-control" type="hidden" name="**General Information**" value=" ">
                         <h2>General Information</h2><input class="form-control d-none" type="text" name="General Info">
@@ -38,10 +41,6 @@
                         <div class="mb-3"><label class="form-label">Your Email:</label><input class="form-control" type="email" name="Email:" placeholder="Email" autocomplete="on" inputmode="email"></div>
                         <div class="mb-3"><label class="form-label">Your Age:</label><select class="form-select" name="Age:" required="">
                                 <option value="" selected="" disabled="" hidden="">Age*</option>
-                                <option value="-13">13-</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
                                 <option value="16">16</option>
                                 <option value="17">17</option>
                                 <option value="18">18</option>
@@ -60,10 +59,12 @@
                     <div class="col column"><input class="form-control" type="hidden" value=" " name="**General Questions**">
                         <h2>General Questions</h2>
                         <div><label class="form-label">Your Timezone:</label><input class="form-control" type="text" id="Timezone" name="Timezone:" placeholder="E.g. CEST*" autocomplete="off" required=""></div>
-                        <div><label class="form-label">Have you ever been a staff member before?*</label></div><small class="form-text">If you have,&nbsp;<strong>What was your rank?</strong>&nbsp;<strong>What were your duties?</strong> and&nbsp;<strong>Why are you no longer staff in the server?</strong></small><textarea class="form-control" name="Have you ever been a staff member before?" spellcheck="true" required="" minlength="2"></textarea>
+                        <div><label class="form-label">Have you ever been a staff member before?*</label></div><small class="form-text">If you have,&nbsp;<strong>What was your rank?</strong>&nbsp;<strong>What were your duties?</strong> and&nbsp;<strong>Why are you no longer staff in the server?</strong></small>
+                        <textarea class="form-control" name="Have you ever been a staff member before?" spellcheck="true" required="" minlength="2"></textarea>
                         <div><label class="form-label">When did you start playing Minecraft?*</label><input class="form-control" type="date" name="When did you start playing Minecraft?" required=""></div>
                         <div><label class="form-label">When did you create your Discord account?*</label><input class="form-control" type="date" name="When did you create your Discord account?" required=""></div>
-                        <div><label class="form-label">How many hours a week will you be able to contribute in discord?*</label><input class="form-control" type="number" name="How many hours a week will you be able to contribute in discord?" required="" max="168" placeholder="E.g. 42"></div>
+                        <div><label class="form-label">How many hours a week will you be able to contribute in discord?*</label><input class="form-control" type="number" name="How many hours a week will you be able to contribute in discord?" required="" max="168"
+                                placeholder="E.g. 42"></div>
                         <div><label class="form-label">Why do you want to become a staff member?*</label><textarea class="form-control" name="Why do you want to become a staff member?" required="" minlength="150"></textarea></div>
                         <div class="margin-bottom"><label class="form-label">Why should we choose you to become a staff member?*</label><textarea class="form-control" name="Why should we choose you to become a staff member? " minlength="150" required=""></textarea></div>
                     </div>
@@ -71,13 +72,19 @@
                 <div class="row">
                     <div class="col column"><input class="form-control" type="hidden" name="**Scenario Questions**" value=" ">
                         <h2>Scenario Questions</h2>
-                        <div><label class="form-label">If you had a friend in the server, someone you were quite close to and you see them breaking a rule. How would you handle that situation?*</label><textarea class="form-control" name="If you had a friend in the server, someone you were quite close to and you see them breaking a rule. How would you handle that situation?" minlength="50" required=""></textarea></div>
+                        <div><label class="form-label">If you had a friend in the server, someone you were quite close to and you see them breaking a rule. How would you handle that situation?*</label><textarea class="form-control" name="If you had a friend in the server, someone you were quite close to and you see them breaking a rule. How would you handle that situation?"
+                                minlength="50" required=""></textarea></div>
                         <div><label class="form-label">You spot another staff member abusing their powers, what do you do?*</label><textarea class="form-control" name="You spot another staff member abusing their powers, what do you do?" minlength="50" required=""></textarea></div>
-                        <div><label class="form-label">You have punished a player for breaking a rule and now that player is accusing you of abusing your power how do you handle this situation?*</label><textarea class="form-control" name="You have punished a player for breaking a rule and now that player is accusing you of abusing your power how do you handle this situation?" minlength="50" required=""></textarea></div>
-                        <div><label class="form-label">Someone has asked you a question about the guild and you do not know the answer, what do you do?*</label><textarea class="form-control" name="Someone has asked you a question about the guild and you do not know the answer, what do you do?" minlength="50" required=""></textarea></div>
-                        <div><label class="form-label">The server went on fire, everyone is freaking out, spamming, swearing and so forth, what do you do?*</label><textarea class="form-control" name="The server went on fire, everyone is freaking out, spamming, swearing and so forth, what do you do?" minlength="50" required=""></textarea></div>
-                        <div><label class="form-label">A player is asking you to do something that you know would be classed as "abuse of power" what do you do?*</label><textarea class="form-control" name="A player is asking you to do something that you know would be classed as &quot;abuse of power&quot; what do you do?" minlength="50" required=""></textarea></div>
-                        <div class="margin-bottom"><label class="form-label">Two players are having a massive argument in chat, it's disturbing other players and they are complaining about it to you. How do you handle that situation?*</label><textarea class="form-control" name="Two players are having a massive argument in chat, it's disturbing other players and they are complaining about it to you. How do you handle that situation?" minlength="50" required=""></textarea></div>
+                        <div><label class="form-label">You have punished a player for breaking a rule and now that player is accusing you of abusing your power how do you handle this situation?*</label><textarea class="form-control" name="You have punished a player for breaking a rule and now that player is accusing you of abusing your power how do you handle this situation?"
+                                minlength="50" required=""></textarea></div>
+                        <div><label class="form-label">Someone has asked you a question about the guild and you do not know the answer, what do you do?*</label><textarea class="form-control" name="Someone has asked you a question about the guild and you do not know the answer, what do you do?"
+                                minlength="50" required=""></textarea></div>
+                        <div><label class="form-label">The server went on fire, everyone is freaking out, spamming, swearing and so forth, what do you do?*</label><textarea class="form-control" name="The server went on fire, everyone is freaking out, spamming, swearing and so forth, what do you do?"
+                                minlength="50" required=""></textarea></div>
+                        <div><label class="form-label">A player is asking you to do something that you know would be classed as "abuse of power" what do you do?*</label><textarea class="form-control" name="A player is asking you to do something that you know would be classed as &quot;abuse of power&quot; what do you do?"
+                                minlength="50" required=""></textarea></div>
+                        <div class="margin-bottom"><label class="form-label">Two players are having a massive argument in chat, it's disturbing other players and they are complaining about it to you. How do you handle that situation?*</label><textarea class="form-control" name="Two players are having a massive argument in chat, it's disturbing other players and they are complaining about it to you. How do you handle that situation?"
+                                minlength="50" required=""></textarea></div>
                     </div>
                 </div>
                 <div class="row">
@@ -103,17 +110,17 @@
                         <div class="mb-3"></div>
                     </div>
                 </div>
-            </fieldset><button class="btn btn-primary" type="submit">Submit</button> -->
+            </fieldset><button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </section>
     <div id="toggler">
-<label class="switch">
+        <label class="switch">
     <input class="btn-toggle" type="checkbox">
     <div>
         <span id="span-mode">Dark / Light Mode</span>
     </div>
 </label>
-</div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/smart-forms.min.js"></script>
