@@ -8,6 +8,35 @@
   <title>NLH &mdash; Application Form</title>
   <link rel="stylesheet" href="/assets/css/master.css" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Theme tag for safari 15-->
+  <meta name="theme-color" content="#111827" />
+  <meta content="#9d18ff" data-react-helmet="true" name="theme-color" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+
+  <!-- Primary Meta Tags -->
+  <title>NLH Staff Application</title>
+  <meta name="title" content="NLH Staff Application">
+  <meta name="description" content="Apply for the staff position at NoLifeHumans here!">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apply.nlh.wtf/">
+  <meta property="og:title" content="NLH Staff Application">
+  <meta property="og:description" content="Apply for the staff position at NoLifeHumans here!">
+  <meta property="og:image" content="/assets/images/NLH Logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://apply.nlh.wtf/">
+  <meta property="twitter:title" content="NLH Staff Application">
+  <meta property="twitter:description" content="Apply for the staff position at NoLifeHumans here!">
+  <meta property="twitter:image" content="/assets/images/NLH Logo.png">
 </head>
 <?php
 // 000webhost as database
