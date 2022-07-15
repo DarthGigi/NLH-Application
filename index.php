@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NLH &mdash; Application Form</title>
   <link rel="stylesheet" href="/assets/css/master.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- Theme tag for safari 15-->
   <meta name="theme-color" content="#111827" />
@@ -59,7 +58,7 @@ $db = "id19070378_nlh";
         </p>
         <p class="mb-4 leading-relaxed">Questions with an <span class="text-red-400">*</span> are required!</p>
         <div class="flex justify-center">
-          <a href="#form" class="inline-flex rounded border-0 bg-purple-500 py-2 px-6 text-lg text-white hover:bg-purple-600 focus:outline-none">Apply Now!</a>
+          <button onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });" class="inline-flex rounded border-0 bg-purple-500 py-2 px-6 text-lg text-white hover:bg-purple-600 focus:outline-none">Apply Now!</button>
         </div>
       </div>
       <div class="w-5/6 md:w-1/2 lg:w-full lg:max-w-lg">
@@ -117,7 +116,7 @@ $db = "id19070378_nlh";
       $query = "INSERT INTO staff_applications (first_name, last_name, email, age, discord_tag, discord_id, minecraft_username, position, timezone, previous_experience, minecraft_start_date, contribution_time, why_staff, why_choose, scenario_1, scenario_2, scenario_3, scenario_4, scenario_5, scenario_6, scenario_7, opinion, rating, prefer_website, change_anything, reviewed, accepted) VALUES ('$firstname', '$lastname', '$email', '$age', '$discordtag', '$discordid', '$minecraftname', '$stafftype', '$timezone', '$previousstaff', '$minecraftstart', '$contribute', '$whystaff', '$whyyou', '$scen1', '$scen2', '$scen3', '$scen4', '$scen5', '$scen6', '$scen7', '$think', '$rating', '$whichwebsite', '$change', '0', '0')";
       $result = mysqli_query($conn, $query);
       if ($result) {
-        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-gray-900 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6"> <div> <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-200"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/check" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> </div><div class="mt-3 text-center sm:mt-5"> <h3 class="text-lg leading-6 font-medium text-gray-200" id="modal-title"> Application Sent Successfully </h3> <div class="mt-2"> <p class="text-sm text-gray-200"> Thank you for applying to NLH. <br>Your application has succesfully been sent to our database. Our team will review it and get back to you as soon as possible. </p></div></div></div><div class="mt-5 sm:mt-6"> <button type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:text-sm" @click="open=false"> Click to close </button> </div></div></div></div>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-gray-900 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6"> <div> <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-200"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/check" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> </div><div class="mt-3 text-center sm:mt-5"> <h3 class="text-lg leading-6 font-medium text-gray-200" id="modal-title"> Application Sent Successfully </h3> <div class="mt-2"> <p class="text-sm text-gray-200"> Thank you for applying to NLH. <br>Your application has succesfully been sent to our database. <br> Once our team reviews it, you will automatically get an email from us. </p></div></div></div><div class="mt-5 sm:mt-6"> <button type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:text-sm" @click="open=false"> Click to close </button> </div></div></div></div>';
         // clear the form inputs when it has been successfully saved in the database
         $firstname = "";
         $lastname = "";
@@ -145,14 +144,17 @@ $db = "id19070378_nlh";
         $whichwebsite = "";
         $change = "";
         echo '<script defer>document.getElementById("form").reset();</script>';
+        $_SESSION['last-post'] = time();
       } else {
         echo ' <div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Oops... Something went wrong </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Something went wrong while sending your application. <br>Please try again or contact us directly. </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button onclick="window.history.back();" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false"> Click to close </button> <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-400 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:mt-0 sm:w-auto sm:text-sm" @click="open=false"> <a href="mailto:nolifehumans@nlh.wtf">Contact us</a> </button> </div></div></div></div>';
       }
     }
   }
+
+
   ?>
   <!-- Begin form -->
-  <form action="/" method="post" id="form">
+  <form action="" method="post" id="form">
     <div class="space-y-6 px-4 py-8 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-72">
       <div class="rounded-lg bg-gray-800 px-4 py-5 shadow sm:p-6">
         <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -397,23 +399,6 @@ $db = "id19070378_nlh";
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <p class="block text-sm font-medium text-gray-200">Do you prefer using our own website (this website) for applications or Google Forms?</p>
-                <fieldset class="mt-4">
-                  <div class="space-y-4">
-                    <div class="flex items-center">
-                      <input value="This Website" id="own-website" name="which-website" type="radio" class="h-4 w-4 border-gray-300 text-purple-600 focus:ring-purple-500" />
-                      <label for="own-website" class="ml-3 block text-sm font-medium text-gray-200"> This Website </label>
-                    </div>
-
-                    <div class="flex items-center">
-                      <input value="Google Forms" id="google-forms" name="which-website" type="radio" class="h-4 w-4 border-gray-300 text-purple-600 focus:ring-purple-500" />
-                      <label for="google-forms" class="ml-3 block text-sm font-medium text-gray-200"> Google Forms </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-
-              <div class="col-span-6 sm:col-span-4">
                 <label for="change" class="block text-sm font-medium text-gray-200">Would you change anything about this application/website?</label>
                 <p class="text-sm text-gray-400">If so, what would that be?</p>
                 <div class="mt-1">
@@ -426,26 +411,27 @@ $db = "id19070378_nlh";
       </div>
 
       <div class="flex justify-end">
-        <input type="submit" name="Submit" value="Submit" class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-purple-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"></input>
+        <input type="submit" name="Submit" value="Submit" class="cursor-pointer ml-3 inline-flex justify-center rounded-md border border-transparent bg-purple-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"></input>
       </div>
     </div>
   </form>
   <script defer>
-    // Set max date and value to today for date with id "mc-play-start" with vanilla js
-    var today = new Date()
-    var dd = today.getDate()
-    var mm = today.getMonth() + 1 //January is 0
-    var yyyy = today.getFullYear()
-    if (dd < 10) {
-      dd = '0' + dd
-    }
-    if (mm < 10) {
-      mm = '0' + mm
-    }
-    today = yyyy + '-' + mm + '-' + dd
-    document.getElementById('mc-play-start').setAttribute('max', today)
-    document.getElementById('mc-play-start').setAttribute('value', today)
+  // Set max date and value to today for date with id "mc-play-start" with vanilla js
+  var today = new Date()
+  var dd = today.getDate()
+  var mm = today.getMonth() + 1 //January is 0
+  var yyyy = today.getFullYear()
+  if (dd < 10) {
+    dd = '0' + dd
+  }
+  if (mm < 10) {
+    mm = '0' + mm
+  }
+  today = yyyy + '-' + mm + '-' + dd
+  document.getElementById('mc-play-start').setAttribute('max', today)
+  document.getElementById('mc-play-start').setAttribute('value', today)
   </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

@@ -32,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
   $result = $conn->query($query);
   if ($result->num_rows > 0) {
-    // set session variables
+    // set session variables/
     $_SESSION['username'] = $username;
     $_SESSION['loggedin'] = true;
 
@@ -59,10 +59,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   <meta content="#9d18ff" data-react-helmet="true" name="theme-color" />
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
 
   <!-- Primary Meta Tags -->
   <title>NLH Staff Application</title>
