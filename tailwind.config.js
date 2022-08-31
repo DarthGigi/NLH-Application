@@ -6,6 +6,8 @@ module.exports = {
         'login/*.php',
         'logout/*.php',
         'assets/scripts/*.js',
+        'profile/*.php',
+        'team/*.php',
     ],
     theme: {
         extend: {},

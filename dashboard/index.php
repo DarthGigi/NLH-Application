@@ -5,7 +5,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['loggedin'])) {
   if ($_SESSION['loggedin'] == true) {
     // user is logged in
     // start connection with the database
-    // 000webhost as database
     $host = "localhost";
     $user = "id19070378_nolifehumans";
     $pass = "C@63UO86TqE*K!ckm@tg";
@@ -47,7 +46,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NLH &mdash; Application Form</title>
   <link rel="stylesheet" href="/assets/css/master.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="/assets/scripts/alpine.js"></script>
   <!-- Theme tag for safari 15-->
   <meta name="theme-color" content="#111827" />
   <meta content="#9d18ff" data-react-helmet="true" name="theme-color" />
@@ -88,9 +87,9 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
       $sql = "UPDATE staff_applications SET reviewed = 1 WHERE id = '$id'";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        echo '<script>alert("Successfully marked the application as reviewed!");</script>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Reviewed! </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Successfully marked the application as reviewed! </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Close </button> </div></div></div></div>';
       } else {
-        echo '<script>alert("Something went wrong. Please try again.");</script>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Oops... Something went wrong </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Try again or contact Gigi </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Try Again </button> </div></div></div></div>';
       }
     }
 
@@ -99,7 +98,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
       $sql = "UPDATE staff_applications SET reviewed = 1, accepted = 1 WHERE id = '$id'";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        echo '<script>alert("Successfully accepted the application!");</script>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Accepted! </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Successfully accepted the application! </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Close </button> </div></div></div></div>';
         $sql = "SELECT * FROM staff_applications WHERE id = '$id'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
@@ -216,9 +215,9 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
           )
         );
         if (!$mail->send()) {
-          echo "<script>alert('Mailer Error: " . $mail->ErrorInfo . "');</script>";
+          echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Oops... Something went wrong </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Please report this error to Gigi: <br><br> Mailer Error: ' . $mail->ErrorInfo . '  </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Try Again </button> </div></div></div></div>';
         } else {
-          echo "<script>alert('Message sent!');</script>";
+          echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Email Sent! </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Successfully sent the applicant an email! </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false"> Close </button> </div></div></div></div>';
         }
       }
     }
@@ -234,7 +233,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
       $sql = "DELETE FROM staff_applications WHERE id = '$id'";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        echo '<script>alert("Successfully deleted the application!");</script>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Deleted! </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Successfully deleted the application! </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Close </button> </div></div></div></div>';
         $mail = new PHPMailer;
         $mail->isSMTP();
         $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
@@ -345,281 +344,285 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
           )
         );
         if (!$mail->send()) {
-          echo "<script>alert('Mailer Error: " . $mail->ErrorInfo . "');</script>";
+          echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Oops... Something went wrong </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Please report this error to Gigi: <br><br> Mailer Error: ' . $mail->ErrorInfo . '  </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Try Again </button> </div></div></div></div>';
         } else {
-          echo "<script>alert('Message sent!');</script>";
+          echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-green-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Email Sent! </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Successfully sent the applicant an email! </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false"> Close </button> </div></div></div></div>';
         }
       } else {
-        echo '<script>alert("Something went wrong. Please try again.");</script>';
+        echo '<div x-cloak x-data="{open: true}" @keydown.window.escape="open=false" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true"> <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="open=false" aria-hidden="true"> </div><span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&ZeroWidthSpace;</span> <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"> <div class="sm:flex sm:items-start"> <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"> <svg class="h-6 w-6 text-red-600" x-description="Heroicon name: outline/exclamation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> </svg> </div><div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"> <h3 class="text-lg leading-6 font-medium text-gray-500" id="modal-title"> Oops... Something went wrong </h3> <div class="mt-2"> <p class="text-sm text-gray-400"> Try again or contact Gigi </p></div></div></div><div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse"> <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open=false" onclick="window.location.href=window.location.href"> Try Again </button> </div></div></div></div>';
       }
     }
   }
+
+  $user_id = $_SESSION['user_id'];
+  $query = "SELECT * FROM users WHERE id = $user_id";
+  $result = mysqli_query($conn, $query);
+  $user = mysqli_fetch_assoc($result);
+
+  $user_id = $user['id'];
+  $username = $user['username'];
+  $pfp = $user['pfp'];
   ?>
   <div x-data="{ open: true }" @keydown.window.escape="open = false">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-    <div x-show="open" class="fixed inset-0 flex z-40" role="dialog" aria-modal="true"">
-    <div x-show=" open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-600 bg-opacity-75" @click="open = false" aria-hidden="true">
-    </div>
-
-    <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800">
-
-      <div x-show="open" x-transition:enter="ease-in-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0 right-0 -mr-12 pt-2">
-        <button @click="open = false" type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-          <!-- Heroicon name: outline/x -->
-          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <div x-show="open" class="fixed inset-0 flex z-40" role="dialog" aria-modal="true">
+      <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-600 bg-opacity-75" @click="open = false" aria-hidden="true">
       </div>
 
-      <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-        <div class="flex-shrink-0 flex items-center px-4">
-          <img class="h-16 w-auto" src="/assets/images/NLH Text.png" alt="NLH">
-        </div>
-        <nav class="mt-5 px-2 space-y-1">
-          <form id="selectAppMobile" action="" method="POST" class="py-4 flex items-center justify-center">
-            <div class="w-full max-w-sm mx-auto">
-              <label id="listbox-label" class="block text-sm font-medium text-gray-500"> Choose an application </label>
-              <div x-data="{ open: false }" class="mt-1 relative">
-                <button @click="open = ! open" type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                  <div class="flex items-center">
-                    <?php
-                    if (isset($_POST['selectID'])) {
-                      $query = "SELECT id, first_name, last_name, email, reviewed, accepted FROM staff_applications WHERE id = " . $_POST['selectID'] . "";
-                      $result = mysqli_query($conn, $query);
-                      if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $id = $row['id'];
-                          $first_name = $row['first_name'];
-                          $last_name = $row['last_name'] ?? ' ';
-                          $email = $row['email'];
+      <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800">
 
-                          if ($row['reviewed'] == 1 && $row['accepted'] == 0) {
-                            $color = 'bg-green-400';
-                          } else if ($row['reviewed'] == 1 && $row['accepted'] == 1) {
-                            $color = 'bg-purple-400';
-                          } else {
-                            $color = 'bg-gray-200';
+        <div x-show="open" x-transition:enter="ease-in-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in-out duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0 right-0 -mr-12 pt-2">
+          <button @click="open = false" type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+          <div class="flex-shrink-0 flex items-center px-4">
+            <img class="h-16 w-auto" src="/assets/images/NLH Text.png" alt="NLH">
+          </div>
+          <nav class="mt-5 px-2 space-y-1">
+            <form id="selectAppMobile" action="" method="POST" class="py-4 flex items-center justify-center">
+              <div class="w-full max-w-sm mx-auto">
+                <label id="listbox-label" class="block text-sm font-medium text-gray-500"> Choose an application </label>
+                <div x-data="{ open: false }" class="mt-1 relative">
+                  <button @click="open = ! open" type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                    <div class="flex items-center">
+                      <?php
+                      if (isset($_POST['selectID'])) {
+                        $query = "SELECT id, first_name, last_name, email, reviewed, accepted FROM staff_applications WHERE id = " . $_POST['selectID'] . "";
+                        $result = mysqli_query($conn, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                          while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['id'];
+                            $first_name = $row['first_name'];
+                            $last_name = $row['last_name'] ?? ' ';
+                            $email = $row['email'];
+
+                            if ($row['reviewed'] == 1 && $row['accepted'] == 0) {
+                              $color = 'bg-green-400';
+                            } else if ($row['reviewed'] == 1 && $row['accepted'] == 1) {
+                              $color = 'bg-purple-400';
+                            } else {
+                              $color = 'bg-gray-200';
+                            }
+                            $application = '<span class="' . $color . ' flex-shrink-0 inline-block h-2 w-2 rounded-full"></span><span class="ml-3 block truncate">' . $first_name . ' ' . $last_name . '</span><span class="text-gray-500 ml-2 truncate">' . $email . '</span>';
                           }
-                          $application = '<span class="' . $color . ' flex-shrink-0 inline-block h-2 w-2 rounded-full"></span><span class="ml-3 block truncate">' . $first_name . ' ' . $last_name . '</span><span class="text-gray-500 ml-2 truncate">' . $email . '</span>';
                         }
                       }
-                    }
 
-                    if (isset($application)) {
-                      echo $application;
-                    } else
-                      echo '<span class="block truncate"> Select an application </span>';
-                    ?>
-                  </div>
-                  <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                  </span>
-                </button>
-                <ul x-show="open" @click.away="open = false" @keydown.escape="open = false" x-transition class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
-                  <?php
-                  $query = "SELECT id, first_name, last_name, email, reviewed, accepted FROM staff_applications";
-                  $result = mysqli_query($conn, $query);
-                  while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row['id'];
-                    $first_name = $row['first_name'];
-                    $last_name = $row['last_name'] ?? ' ';
-                    $email = $row['email'];
-                    if ($row['reviewed'] == 1 && $row['accepted'] == 0) {
-                      $color = 'bg-green-400';
-                    } else if ($row['reviewed'] == 1 && $row['accepted'] == 1) {
-                      $color = 'bg-purple-400';
-                    } else {
-                      $color = 'bg-gray-200';
-                    }
-                    if (isset($_POST['selectID'])) {
-                      if ($_POST['selectID'] == $row['id']) {
-                        $checkmark = '<span class="text-purple-600 transition-all ease-in-out group-hover:text-purple-200 absolute inset-y-0 right-0 flex items-center pr-4"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></span>';
+                      if (isset($application)) {
+                        echo $application;
+                      } else
+                        echo '<span class="block truncate"> Select an application </span>';
+                      ?>
+                    </div>
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                      <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul x-show="open" @click.away="open = false" @keydown.escape="open = false" x-transition class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                    <?php
+                    $query = "SELECT id, first_name, last_name, email, reviewed, accepted FROM staff_applications";
+                    $result = mysqli_query($conn, $query);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      $id = $row['id'];
+                      $first_name = $row['first_name'];
+                      $last_name = $row['last_name'] ?? ' ';
+                      $email = $row['email'];
+                      if ($row['reviewed'] == 1 && $row['accepted'] == 0) {
+                        $color = 'bg-green-400';
+                      } else if ($row['reviewed'] == 1 && $row['accepted'] == 1) {
+                        $color = 'bg-purple-400';
                       } else {
-                        $checkmark = '';
+                        $color = 'bg-gray-200';
                       }
+                      if (isset($_POST['selectID'])) {
+                        if ($_POST['selectID'] == $row['id']) {
+                          $checkmark = '<span class="text-purple-600 transition-all ease-in-out group-hover:text-purple-200 absolute inset-y-0 right-0 flex items-center pr-4"><svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></span>';
+                        } else {
+                          $checkmark = '';
+                        }
+                      }
+                      echo '<li :id="' . $row['id'] . '" @click="selectAppMobile.selectIDMobile.value=' . $row['id'] . '; selectAppMobile.submit();" class="text-gray-900 hover:text-purple-100 group rounded-lg my-2 mx-1 hover:bg-purple-600 cursor-default select-none relative py-2 pl-3 pr-9 transition-all ease-in-out" id="listbox-option-0" role="option">';
+                      echo '<div class="flex items-center">';
+                      echo '<span class="' . $color . ' flex-shrink-0 inline-block h-2 w-2 rounded-full" aria-hidden="true"></span>';
+                      echo '<span class="font-normal ml-3 block truncate">' . $row['first_name'] . ' ' . $row['last_name'] . '</span>';
+                      echo '<span class="text-gray-500 transition-all ease-in-out group-hover:text-purple-200 ml-2 truncate">' . $email . '</span>';
+                      echo '</div>';
+                      if (isset($checkmark)) {
+                        echo $checkmark;
+                      }
+                      echo '</li>';
                     }
-                    echo '<li :id="' . $row['id'] . '" @click="selectAppMobile.selectIDMobile.value=' . $row['id'] . '; selectAppMobile.submit();" class="text-gray-900 hover:text-purple-100 group rounded-lg my-2 mx-1 hover:bg-purple-600 cursor-default select-none relative py-2 pl-3 pr-9 transition-all ease-in-out" id="listbox-option-0" role="option">';
-                    echo '<div class="flex items-center">';
-                    echo '<span class="' . $color . ' flex-shrink-0 inline-block h-2 w-2 rounded-full" aria-hidden="true"></span>';
-                    echo '<span class="font-normal ml-3 block truncate">' . $row['first_name'] . ' ' . $row['last_name'] . '</span>';
-                    echo '<span class="text-gray-500 transition-all ease-in-out group-hover:text-purple-200 ml-2 truncate">' . $email . '</span>';
-                    echo '</div>';
-                    if (isset($checkmark)) {
-                      echo $checkmark;
-                    }
-                    echo '</li>';
-                  }
-                  ?>
-                </ul>
+                    ?>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <input type="hidden" id="selectIDMobile" name="selectID" value="" />
-          </form>
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
-            <!--
+              <input type="hidden" id="selectIDMobile" name="selectID" value="" />
+            </form>
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="/dashboard/" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              <!--
               Heroicon name: outline/home
 
               Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300"
             -->
-            <svg class="text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            Dashboard
-          </a>
+              <svg class="text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Dashboard
+            </a>
 
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
-            <!-- Heroicon name: user-group -->
-            <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            Team
-          </a>
+            <a href="/profile/" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              <!-- Heroicon name: outline/user-circle -->
+              <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
 
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
-            <!-- Heroicon name: outline/user-circle -->
-            <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+              Profile
+            </a>
 
-            Profile
-          </a>
-
-          <a href="/logout/" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
-            <!-- Heroicon name: outline/logout -->
-            <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-            Logout
-          </a>
-        </nav>
-      </div>
-      <div class="flex-shrink-0 flex bg-gray-700 p-4">
-        <a href="#" class="flex-shrink-0 group block">
-          <div class="flex items-center">
-            <div class="ml-3">
-              <p class="text-base font-medium text-white"><?= $_SESSION['username'] ?></p>
-              <p class="text-sm font-medium text-gray-400 group-hover:text-gray-300">View profile</p>
+            <a href="/logout/" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              <!-- Heroicon name: outline/logout -->
+              <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              Logout
+            </a>
+          </nav>
+        </div>
+        <div class="flex-shrink-0 flex bg-gray-700 p-4">
+          <a href="/profile/" class="flex-shrink-0 group block">
+            <div class="flex items-center">
+              <div>
+                <img class="inline-block h-9 w-9 rounded-full" src="/assets/images/pfp/<?= $pfp ?>" alt="<?= $username ?>'s PFP">
+              </div>
+              <div class="ml-3">
+                <p class="text-base font-medium text-white"><?= $username ?></p>
+                <p class="text-sm font-medium text-gray-400 group-hover:text-gray-300">View profile</p>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-14">
+        <!-- Force sidebar to shrink to fit close icon -->
       </div>
     </div>
+    <div class="flex flex-col flex-1">
+      <div class="sticky top-0 z-10 pl-1 pt-1 sm:pl-3 sm:pt-3">
+        <button @click="open = true" type="button" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-200 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
+          <!-- Heroicon name: outline/menu -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <main class="flex-1">
+        <div class="py-6">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <!-- Replace with your content -->
+            <?php
+            if (isset($_POST['selectID'])) {
+              $query = "SELECT * FROM staff_applications WHERE id = " . $_POST['selectID'];
+              $result = mysqli_query($conn, $query);
+              $row = mysqli_fetch_assoc($result);
+              $id = $row['id'];
+              $first_name = $row['first_name'];
+              $last_name = $row['last_name'] ?? "Not Provided";
+              $email = $row['email'];
+              $age = $row['age'];
+              $discord_tag = $row['discord_tag'];
+              $discord_id = $row['discord_id'];
+              $minecraft_username = $row['minecraft_username'];
 
-    <div class="flex-shrink-0 w-14">
-      <!-- Force sidebar to shrink to fit close icon -->
-    </div>
-  </div>
-  <div class="flex flex-col flex-1">
-    <div class="sticky top-0 z-10 pl-1 pt-1 sm:pl-3 sm:pt-3">
-      <button @click="open = true" type="button" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-200 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
-        <!-- Heroicon name: outline/menu -->
-        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-    <main class="flex-1">
-      <div class="py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <!-- Replace with your content -->
-          <?php
-          if (isset($_POST['selectID'])) {
-            $query = "SELECT * FROM staff_applications WHERE id = " . $_POST['selectID'];
-            $result = mysqli_query($conn, $query);
-            $row = mysqli_fetch_assoc($result);
-            $id = $row['id'];
-            $first_name = $row['first_name'];
-            $last_name = $row['last_name'] ?? "Not Provided";
-            $email = $row['email'];
-            $age = $row['age'];
-            $discord_tag = $row['discord_tag'];
-            $discord_id = $row['discord_id'];
-            $minecraft_username = $row['minecraft_username'];
+              // checked based on the position
+              if ($row['position'] == "Administrator") {
+                $administrator = '<input checked disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+                $moderator = '<input disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+              } else if ($row['position'] == "Moderator") {
+                $administrator = '<input disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+                $moderator = '<input checked disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+              } else {
+                $administrator = '<input disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+                $moderator = '<input disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
+              }
 
-            // checked based on the position
-            if ($row['position'] == "Administrator") {
-              $administrator = '<input checked disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-              $moderator = '<input disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-            } else if ($row['position'] == "Moderator") {
-              $administrator = '<input disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-              $moderator = '<input checked disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-            } else {
-              $administrator = '<input disabled id="admin" value="Administrator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-              $moderator = '<input disabled id="mod" value="Moderator" name="staff" type="radio" class="h-4 w-4 border-gray-300 text-purple-600" />';
-            }
-
-            $timezone = $row['timezone'];
-            $prev_experience = $row['previous_experience'];
-            $minecraft_start_date = $row['minecraft_start_date'];
-            $contribution_time = $row['contribution_time'];
-            $why_staff = $row['why_staff'];
-            $why_choose = $row['why_choose'];
-            $scen1 = $row['scenario_1'];
-            $scen2 = $row['scenario_2'];
-            $scen3 = $row['scenario_3'];
-            $scen4 = $row['scenario_4'];
-            $scen5 = $row['scenario_5'];
-            $scen6 = $row['scenario_6'];
-            $scen7 = $row['scenario_7'];
-            $opinion = $row['opinion'] ?? "Not Provided";
-            $rating = $row['rating'] ?? "0";
-            $rating = intval($rating);
-            if ($rating == 0) {
-              $rating = '<option value="0" selected>&#128171;</option>
+              $timezone = $row['timezone'];
+              $prev_experience = $row['previous_experience'];
+              $minecraft_start_date = $row['minecraft_start_date'];
+              $contribution_time = $row['contribution_time'];
+              $why_staff = $row['why_staff'];
+              $why_choose = $row['why_choose'];
+              $scen1 = $row['scenario_1'];
+              $scen2 = $row['scenario_2'];
+              $scen3 = $row['scenario_3'];
+              $scen4 = $row['scenario_4'];
+              $scen5 = $row['scenario_5'];
+              $scen6 = $row['scenario_6'];
+              $scen7 = $row['scenario_7'];
+              $opinion = $row['opinion'] ?? "Not Provided";
+              $rating = $row['rating'] ?? "0";
+              $rating = intval($rating);
+              if ($rating == 0) {
+                $rating = '<option value="0" selected>&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else if ($rating == 1) {
-              $rating = '<option value="0">&#128171;</option>
+              } else if ($rating == 1) {
+                $rating = '<option value="0">&#128171;</option>
               <option value="1" selected>&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else if ($rating == 2) {
-              $rating = '<option value="0">&#128171;</option>
+              } else if ($rating == 2) {
+                $rating = '<option value="0">&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2" selected>&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else if ($rating == 3) {
-              $rating = '<option value="0">&#128171;</option>
+              } else if ($rating == 3) {
+                $rating = '<option value="0">&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3" selected>&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else if ($rating == 4) {
-              $rating = '<option value="0">&#128171;</option>
+              } else if ($rating == 4) {
+                $rating = '<option value="0">&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4" selected>&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else if ($rating == 5) {
-              $rating = '<option value="0">&#128171;</option>
+              } else if ($rating == 5) {
+                $rating = '<option value="0">&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5" selected>&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            } else {
-              $rating = '<option value="0" selected>&#128171;</option>
+              } else {
+                $rating = '<option value="0" selected>&#128171;</option>
               <option value="1">&#11088;</option>
               <option value="2">&#11088;&#11088;</option>
               <option value="3">&#11088;&#11088;&#11088;</option>
               <option value="4">&#11088;&#11088;&#11088;&#11088;</option>
               <option value="5">&#127775;&#127775;&#127775;&#127775;&#127775;</option>';
-            }
-            $change_anything = $row['change_anything'] ?? "Not Provided";
-            echo '<form id="selectAction" action="" method="POST" class="space-y-6 px-2 py-8 sm:px-2 md:px-4 lg:px-8 xl:px-16 2xl:px-32 flex items-end justify-end">
+              }
+              $change_anything = $row['change_anything'] ?? "Not Provided";
+              echo '<form id="selectAction" action="" method="POST" class="space-y-6 px-2 py-8 sm:px-2 md:px-4 lg:px-8 xl:px-16 2xl:px-32 flex items-end justify-end">
             <input type="hidden" name="id" value="' . $id . '" />
             <input type="hidden" id="Action" name="Action" value="" />
             <div x-data="{ open: false }" class="relative inline-block text-left">
@@ -663,7 +666,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
               </div>
             </div>
           </form>';
-            echo '<div class="space-y-6 px-2 py-8 sm:px-2 md:px-4 lg:px-8 xl:px-16 2xl:px-32">
+              echo '<div class="space-y-6 px-2 py-8 sm:px-2 md:px-4 lg:px-8 xl:px-16 2xl:px-32">
                 <div class="rounded-lg bg-gray-800 px-4 py-5 shadow sm:p-6">
                   <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
@@ -891,13 +894,13 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
                   </div>
                 </div>
               </div>';
-          }
-          ?>
-          <!-- /End replace -->
+            }
+            ?>
+            <!-- /End replace -->
+          </div>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
   </div>
 
 

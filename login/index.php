@@ -1,5 +1,4 @@
 <?php
-// 000webhost as database
 $host = "localhost";
 $user = "id19070378_nolifehumans";
 $pass = "C@63UO86TqE*K!ckm@tg";
@@ -31,9 +30,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   // check if username and password are valid
   $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
   $result = $conn->query($query);
-  if ($result->num_rows > 0) {
+  $row = $result->fetch_assoc();
+  if ($row) {
     // set session variables/
-    $_SESSION['username'] = $username;
+    $_SESSION['user_id'] = $row['id'];
+    $_SESSION['username'] = $row['username'];
     $_SESSION['loggedin'] = true;
 
     // redirect to dashboard
@@ -52,7 +53,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NLH &mdash; Application Form</title>
   <link rel="stylesheet" href="/assets/css/master.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="/assets/scripts/alpine.js"></script>
 
   <!-- Theme tag for safari 15-->
   <meta name="theme-color" content="#111827" />
