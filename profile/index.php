@@ -3,6 +3,14 @@ session_start();
 // check if user is logged in
 if (isset($_SESSION['username']) && isset($_SESSION['loggedin'])) {
   if ($_SESSION['loggedin'] == true) {
+    if ($_SESSION['guest'] == true) {
+      $disabled = 'disabled';
+      $disabledText = 'You are logged in as a guest.';
+    } else {
+      $disabled = '';
+      $disabledText = 'Save';
+    }
+
     // user is logged in
     // start connection with the database
     // 000webhost as database
@@ -263,12 +271,12 @@ if (isset($_POST['submitForm'])) {
                             <label for="username" class="block text-sm font-medium text-gray-200"> Username </label>
                             <div class="mt-1 flex rounded-md shadow-sm">
                               <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"> nlh.wtf/ </span>
-                              <input type="text" name="username" id="username" autocomplete="username" required class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="<?= $username ?>">
+                              <input type="text" name="username" id="username" autocomplete="username" required class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" <?= $disabled ?> placeholder="<?= $username ?>">
                             </div>
                           </div>
                         </div>
                         <div class="flex justify-start">
-                          <button onclick="this.form.reportValidity() ? this.form.submit() : false;" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                          <button onclick="this.form.reportValidity() ? this.form.submit() : false;" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" <?= $disabled ?>><?= $disabledText ?></button>
                           <button onclick="this.form.reset()" type="button" class="ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                         </div>
                         <input type="hidden" name="submitForm" value="submitForm">
@@ -279,16 +287,17 @@ if (isset($_POST['submitForm'])) {
                         <div class="grid grid-cols-6 gap-6">
                           <div class="col-span-6 sm:col-span-3">
                             <label for="current-pass" class="block text-sm font-medium text-gray-200">Current Password</label>
-                            <input type="password" name="current-pass" id="current-pass" autocomplete="current-password" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <input type="password" name="current-pass" id="current-pass" autocomplete="current-password" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" <?= $disabled ?>>
                           </div>
 
                           <div class="col-span-6 sm:col-span-3">
                             <label for="new-pass" class="block text-sm font-medium text-gray-200">New Password</label>
-                            <input type="password" name="new-pass" id="new-pass" autocomplete="new-password" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <input type="password" name="new-pass" id="new-pass" autocomplete="new-password" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" <?= $disabled ?>>
                           </div>
                         </div>
                         <div class="flex justify-start">
-                          <button onclick="this.form.reportValidity() ? this.form.submit() : false;" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                          <button onclick="this.form.reportValidity() ? this.form.submit() : false;" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" <?= $disabled ?>><?= $disabledText ?></button>
+                          </button>
                           <button onclick="this.form.reset()" type="button" class="ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
                         </div>
                         <input type="hidden" name="submitForm" value="submitForm">

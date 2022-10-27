@@ -36,6 +36,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $_SESSION['user_id'] = $row['id'];
     $_SESSION['username'] = $row['username'];
     $_SESSION['loggedin'] = true;
+    // check if its a guest user
+    if ($_SESSION['username'] == 'guest') {
+      $_SESSION['guest'] = true;
+    }
 
     // redirect to dashboard
     header("Location: /dashboard");
@@ -91,6 +95,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       <div>
         <img class="mx-auto h-48 w-auto" src="/assets/images/NLH Logo Transparent.png" alt="Workflow">
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-200">Sign in to your account</h2>
+        <p class="mt-2 text-center text-sm text-gray-400">
+          Or if you are a guest, use the guest account: <br>
+          <span class="text-gray-400">Username: guest</span><br>
+          <span class="text-gray-400">Password: 1234</span>
+        </p>
       </div>
       <form class="mt-8 space-y-6" action="" method="post">
         <input type="hidden" name="remember" value="true">
