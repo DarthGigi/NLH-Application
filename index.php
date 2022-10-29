@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NLH &mdash; Application Form</title>
   <link rel="stylesheet" href="/assets/css/master.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 
   <!-- Theme tag for safari 15-->
   <meta name="theme-color" content="#111827" />
@@ -57,8 +59,9 @@ $db = "id19070378_nlh";
           Rembember to keep an eye on your, vocabulary, spelling, grammar and punctuation.
         </p>
         <p class="mb-4 leading-relaxed">Questions with an <span class="text-red-400">*</span> are required!</p>
-        <div class="flex justify-center">
+        <div class="flex justify-center gap-4">
           <button onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });" class="inline-flex rounded border-0 bg-purple-500 py-2 px-6 text-lg text-white hover:bg-purple-600 focus:outline-none">Apply Now!</button>
+          <a href="/login/" class="inline-flex rounded border-0 bg-gray-500 py-2 px-6 text-lg text-white hover:bg-gray-600 focus:outline-none">Staff Login</a>
         </div>
       </div>
       <div class="w-5/6 md:w-1/2 lg:w-full lg:max-w-lg">
@@ -431,7 +434,6 @@ $db = "id19070378_nlh";
   document.getElementById('mc-play-start').setAttribute('max', today)
   document.getElementById('mc-play-start').setAttribute('value', today)
   </script>
-  <script defer src="/assets/scripts/alpine.js"></script>
 </body>
 
 </html>
