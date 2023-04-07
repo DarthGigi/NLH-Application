@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+textarea::-webkit-scrollbar, textarea::-webkit-resizer {
+  display: none;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+drag-none {
+  -webkit-user-drag: none;
+}
